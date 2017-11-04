@@ -13,8 +13,8 @@ public class SsrsteomTree
 
 	public SsrsteomTree(ArrayList<Double> ssrsteomInitialRow) throws Exception
 	{
-		GenTree(ssrsteomInitialRow);
-		PopulatInformation();
+		genTree(ssrsteomInitialRow);
+		populateInformation();
 	}
 
 	private int factorial(double d)
@@ -31,7 +31,7 @@ public class SsrsteomTree
 	 * sets initialization variable sets the highestDegree of the ssrsteomtree sets
 	 * the coeffecientOfHighestDegree of the ssrsteomtree
 	 */
-	private void PopulatInformation()
+	private void populateInformation()
 	{
 		// grab last element in last list in ssrsteomList
 		setHighestDegree(highestLevel - 1);
@@ -47,7 +47,7 @@ public class SsrsteomTree
 	 *            this is the initial output ArrayList for the Ssrsteom Tree
 	 * @throws Exception
 	 */
-	public void GenTree(ArrayList<Double> ssrsteomRow) throws Exception
+	public void genTree(ArrayList<Double> ssrsteomRow) throws Exception
 	{
 		highestLevel++;
 		getSsrsteomList().add(ssrsteomRow);
@@ -66,7 +66,7 @@ public class SsrsteomTree
 				double deviation = ssrsteomRow.get(i + 1) - ssrsteomRow.get(i);
 				nextRow.add(deviation);
 			}
-			GenTree(nextRow);
+			genTree(nextRow);
 		}
 	}
 
